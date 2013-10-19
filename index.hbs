@@ -1,0 +1,61 @@
+{{! include the default.hbs template }}
+{{!< default}}
+
+{{! include the header template (placed in the partials folder) }}
+{{> header}}
+
+<main class="main_att" role="main">
+
+	{{! loop through posts }}
+	{{#foreach posts}}
+
+		<article class="article_att" role="article" itemscope itemtype="http://schema.org/Article">
+
+			<header class="articleheader_att">
+
+				{{! formatted by moment.js}}
+				<time class="date_att" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished"> 
+					{{date format='ddd DD MMM YYYY'}}
+				</time>
+
+				<h1 class="article-title_att" itemprop="headline">
+					<a href="{{{url}}}" rel="bookmark">
+						{{title}}
+					</a>
+				</h1>
+
+			</header>
+
+			<div class="article-content_att" itemprop="articleBody">
+			
+				{{! 
+					Use excerpt instead of content to output a short intro.
+					It can accept a words="100" or characters="100" parameter to personalize the output restriction
+				}}
+
+				{{! outputs the full content of a post, also accepts a words/character parameter }}
+				{{content}}
+
+			</div>
+
+			{{! outputs tags, if any are given }}
+			{{#if tags}}
+				<div class="article-tags_att">
+					Tags: {{tags separator=" | "}}
+				</div>
+			{{/if}}
+
+		</article>
+
+	{{/foreach}}
+
+	{{#if pagination}}
+		<div class="pagination_att">
+			{{{pagination}}}
+		</div>
+	{{/if}}
+
+</main>
+
+{{! include the footer template (placed in the partials folder) }}
+{{> footer}}

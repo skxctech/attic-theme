@@ -1,0 +1,99 @@
+{{! include the default.hbs template }}
+{{!< default}}
+
+{{! include the header template (placed in the partials folder) }}
+{{> header}}
+
+<main class="main_att" role="main">
+
+	{{! #post tags display the post for the single template }}
+	{{#post}}
+
+		<article class="article_att" role="article" itemscope itemtype="http://schema.org/Article">
+
+			<header class="article-header_att">
+				<time class="date_att" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">
+					{{date format='dddd DD MMM YYYY'}}
+				</time>
+
+				<h1 class="article-title_att" itemprop="headline">{{title}}</h1>
+
+			</header>
+
+			<div class="article-content_att" itemprop="articleBody">
+			
+				{{! the full output of the article content }}
+				{{content}}
+			
+			</div>
+
+			{{#if tags}}
+				<div class="article-tags_att">
+					Tags: {{tags separator=" | "}}
+				</div>
+			{{/if}}
+
+    		<div class="share-article_att">
+
+				<h4 class="share_att">Share this post: &nbsp;</h4>
+
+				{{! url tags can be given an `absolute` parameter, output the full URL }}
+				<a class="share_att icon-twitter" target="_blank" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}">
+					<span class="hidethis_att">Twitter</span>
+				</a>
+
+    			<a class="share_att icon-facebook" target="_blank" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}">
+    				<span class="hidethis_att">Facebook</span>
+    			</a>
+    			<a class="share_att icon-gplus" target="_blank" href="https://plus.google.com/share?url={{url absolute="true"}}">
+    				<span class="hidethis_att">Google+</span>
+    			</a>
+
+    		</div>
+
+    		{{! author bio, which is set in the ghost admin page, Settings > User}}
+        	{{#if author}}
+		        <footer class="article-footer_att">
+
+		        	<address itemscope itemtype="http://schema.org/Person">
+
+		        		{{#if author.image}}
+		        			<div class="author-image_att">
+		        				<img src="{{author.image}}" itemprop="image" />
+		        			</div>
+		        		{{/if}}
+
+		        		<h4 class="author-name_att">
+		        			<span itemprop="author">{{author.name}}</span>
+		        		</h4>
+
+		        		{{#if author.website}}
+		        			<div class="author-website_att">
+		        				<a href="{{author.website}}" itemprop="url">
+		        					{{author.website}}
+		        				</a>
+		        			</div>
+		        		{{/if}}
+
+		        	</address>
+
+		        	<div class="author-bio_att">
+		        		<p>{{author.bio}}</p>
+		        	</div>
+		        </footer>
+        	{{/if}}
+
+		</article>
+
+	{{/post}}
+
+	{{#if pagination}}
+		<div class="pagination_att">
+			{{{pagination}}}
+		</div>
+	{{/if}}
+
+</main>
+
+{{! include the footer template (placed in the partials folder) }}
+{{> footer}}

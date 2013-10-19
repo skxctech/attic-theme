@@ -1,0 +1,39 @@
+{{! the main template that contains the site structure, include this in other page template files }}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    {{! Document Settings }}
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+	{{! Page Meta }}
+	<title>{{meta_title}}</title>
+	<meta name="description" content="{{meta_description}}" />
+
+	{{! Styles }}
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+
+    {{! Responsive Meta Tags }}
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{! head data added by ghost, similar to wp_head() }}
+    {{ghost_head}}
+
+</head>
+<body class="{{body_class}}">
+
+	<div class="wrap_att wrap-main_att">
+		{{! this is where the other templates will be loaded }}
+		{{{body}}}
+	</div>
+
+	{{! footer data added by ghost }}
+	{{ghost_foot}}
+
+</body>
+</html>
