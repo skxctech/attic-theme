@@ -30,5 +30,5 @@ Instructions for installing ghost are available [on the official site](http://do
 
 This repo will have two branches:
 
-    * `base-theme` - simple structure and templates (currently present)
-    * `building-theme` - has setup of grunt and bower with included support for sass, compass, jshint, concatenation, minification, images optimization (soon)
+* `base-theme` - simple structure and templates (currently present)
+* `building-theme` - has setup of grunt and bower with included support for sass, compass, jshint, concatenation, minification, images optimization (soon)
