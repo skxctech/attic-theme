@@ -25,3 +25,10 @@ A simple theme folder structure:
 Ghost uses [handlebars](http://handlebarsjs.com/) as a templating system, with a few personalized helper classes such as `{{ghost_head}}`, `{{ghost_foot}}`, `{{body}}` - full helper classes details are over at [docs.ghost.org](http://docs.ghost.org/themes/#helpers) and throughout the Ghost Themes section.
 
 Instructions for installing ghost are available [on the official site](http://docs.ghost.org/installation/), and there's also a [vagrant development box](https://github.com/TryGhost/Ghost-Vagrant) available on their github account.
+
+### Branches ###
+
+This repo will have two branches:
+
+    * `base-theme` - simple structure and templates (currently present)
+    * `building-theme` - has setup of grunt and bower with included support for sass, compass, jshint, concatenation, minification, images optimization (soon)
