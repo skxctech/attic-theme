@@ -1,4 +1,4 @@
-#Attic - Ghost Base Theme
+## Attic - Ghost Base Theme ##
 
 This is a barebones of a ghost theme - result of [the official ghost documentation](http://docs.ghost.org/themes/) and a tutsplus [ghost theme tutorial](http://webdesign.tutsplus.com/sessions/building-a-ghost-theme-from-scratch/). I've added a few comments throughout the templates that sum up the two.
 
