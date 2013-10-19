@@ -1,6 +1,6 @@
-## Attic - Ghost Base Theme ##
+## Attic - Ghost Barebones Theme ##
 
-This is a barebones of a ghost theme - result of [the official ghost documentation](http://docs.ghost.org/themes/) and a tutsplus [ghost theme tutorial](http://webdesign.tutsplus.com/sessions/building-a-ghost-theme-from-scratch/). I've added a few comments throughout the templates that sum up the two.
+This is a base of a ghost theme - result of [the official ghost documentation](http://docs.ghost.org/themes/) and a tutsplus [ghost theme tutorial](http://webdesign.tutsplus.com/sessions/building-a-ghost-theme-from-scratch/). I've added a few comments throughout the templates that sum up the two.
 
 Just clone this repo inside the `ghost/content/themes` folder.
 
@@ -20,7 +20,7 @@ A simple theme folder structure:
     * **post.hbs** *
 
 
-<sup>***files required for a theme to work**</sup>
+<sup>* files required for a theme to work</sup>
     
 Ghost uses [handlebars](http://handlebarsjs.com/) as a templating system, with a few personalized helper classes such as `{{ghost_head}}`, `{{ghost_foot}}`, `{{body}}` - full helper classes details are over at [docs.ghost.org](http://docs.ghost.org/themes/#helpers) and throughout the Ghost Themes section.
 
