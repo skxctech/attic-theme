@@ -1,0 +1,29 @@
+{
+  "name": "attic",
+  "version": "0.0.0",
+  "description": "a barebones ghost theme",
+  "main": "default.hbs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.catalystww.com:radu.simion/attic.git"
+  },
+  "keywords": [
+    "ghost",
+    "theme"
+  ],
+  "author": "radu s.",
+  "license": "BSD",
+  "readmeFilename": "readme.md",
+  "gitHead": "059cd7d85750cb09541dc5123c1eba4fa7b0ac2a",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-compass": "~0.6.0",
+    "grunt-contrib-imagemin": "~0.3.0"
+  }
+}

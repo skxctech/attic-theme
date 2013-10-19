@@ -7,13 +7,13 @@ Just clone this repo inside the `ghost/content/themes` folder.
 A simple theme folder structure:
 
 * theme root folder
-	* assets
-    	* css
+    * assets
+        * css
         * fonts
         * images
         * js
     * partials
-    	* header
+        * header
         * footer
     * default.hbs
     * **index.hbs** *
@@ -30,5 +30,5 @@ Instructions for installing ghost are available [on the official site](http://do
 
 This repo will have two branches:
 
-* `base-theme` - simple structure and templates (currently present)
-* `dev-theme` - has setup of grunt and bower with included support for sass, compass, jshint, concatenation, minification, images optimization (soon)
+* `base-theme` - simple structure and templates
+* `dev-theme` - has setup of grunt and bower with included support for sass, compass, jshint, uglify. Run `grunt watch` during development, `grunt` for a build with uglify. Requires compass and compass normalize, install with `gem install compass && gem install compass-normalize`.
