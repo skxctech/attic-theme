@@ -1,24 +1,30 @@
+{{#if @blog.cover}}
+<div role="banner" class="header-main_att header-main-cover_att" style="background-image: url({{@blog.cover}})">
+{{else}}
 <div role="banner" class="header-main_att">
+{{/if}}
+	<div class="wrap_att">
 
-	{{! the blog metadata, set in ghost admin Settings > General }}
+		{{#if @blog.logo}}
+			<a class="logo_att" href="{{@blog.url}}">
+				<img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+			</a>
+		{{/if}}
 
-	{{#if @blog.logo}}
-		<a class="logo_att" href="{{@blog.url}}">
-			<img src="{{@blog.logo}}" alt="{{@blog.title}}" />
-		</a>
-	{{/if}}
+		<hgroup class="blog-titles_att">
+			<h1 class="blog-title_att">
+				<a title="{{@blog.title}}" href='{{@blog.url}}'>
+					{{{@blog.title}}}
+				</a>
+			</h1>
+			<br/>
+			<h2 class="blog-description_att">
+				<a title="{{@blog.title}}" href='{{@blog.url}}'>
+					{{@blog.description}}
+				</a>
+			</h2>
+		</hgroup>
 
-	<h1 class="blog-title_att">
-		<a title="{{@blog.title}}" href='{{@blog.url}}'>
-			{{{@blog.title}}}
-		</a>
-	</h1>
-
-
-	<h2 class="blog-description_att">
-		<a title="{{@blog.title}}" href='{{@blog.url}}'>
-			{{@blog.description}}
-		</a>
-	</h2>
+	</div>
 	
 </div>

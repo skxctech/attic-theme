@@ -1,5 +1,3 @@
-{{! the main template that contains the site structure, include this in other page template files }}
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,19 +19,91 @@
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {{! head data added by ghost, similar to wp_head() }}
     {{ghost_head}}
 
 </head>
 <body class="{{body_class}}">
 
-	<div class="wrap_att wrap-main_att">
-		{{! this is where the other templates will be loaded }}
+	<div id="open-author-area" class="button">
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+	</div>
+
+	<aside class="author_att">
+
+		{{! there has to be a better way for this - currently outputting two loops for the author markup to work on both index/post templates }}
+
+		{{#foreach posts}}
+	    	{{#if @first}}
+
+		    	<address itemscope itemtype="http://schema.org/Person">
+
+		    		{{#if author.image}}
+		    			<div class="author-image_att" style="background-image: url({{author.cover}});">
+		    				<img src="{{author.image}}" itemprop="image" />
+		    			</div>
+		    		{{/if}}
+
+		    		<h4 class="author-name_att">
+		    			<span itemprop="author">{{author.name}}</span>
+		    		</h4>
+
+		    		{{#if author.website}}
+		    			<div class="author-website_att">
+		    				<a href="{{author.website}}" itemprop="url">
+		    					{{author.website}}
+		    				</a>
+		    			</div>
+		    		{{/if}}
+
+		    	</address>
+
+		    	<div class="author-bio_att">
+		    		<p>{{author.bio}}</p>
+		    	</div>
+
+	    	{{/if}}
+		{{/foreach}}
+
+		{{#post}}
+
+		    	<address itemscope itemtype="http://schema.org/Person">
+
+		    		{{#if author.image}}
+		    			<div class="author-image_att" style="background-image: url({{author.cover}});">
+		    				<img src="{{author.image}}" itemprop="image" />
+		    			</div>
+		    		{{/if}}
+
+		    		<h4 class="author-name_att">
+		    			<span itemprop="author">{{author.name}}</span>
+		    		</h4>
+
+		    		{{#if author.website}}
+		    			<div class="author-website_att">
+		    				<a href="{{author.website}}" itemprop="url">
+		    					{{author.website}}
+		    				</a>
+		    			</div>
+		    		{{/if}}
+
+		    	</address>
+
+		    	<div class="author-bio_att">
+		    		<p>{{author.bio}}</p>
+		    	</div>
+
+		{{/post}}
+	</aside>
+
+	<div class="main_att">
 		{{{body}}}
 	</div>
 
-	{{! footer data added by ghost }}
 	{{ghost_foot}}
+	<script src="/assets/js/src/main.js"></script>
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 
 </body>
 </html>
