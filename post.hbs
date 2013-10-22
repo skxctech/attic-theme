@@ -18,19 +18,15 @@
 
 					<div class="article-meta_att">
 
-						<div class="bg_att">
-
-							<time class="date_att" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">
-								{{date format='dddd DD MMM YYYY'}}
-							</time>
-							|
-							{{#if tags}}
-								<divspan class="article-tags_att">
-									{{tags separator=", "}}
-								</span>
-							{{/if}}
-
-						</div>
+						<time class="date_att" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">
+							{{date format='dddd DD MMM YYYY'}}
+						</time>
+						|
+						{{#if tags}}
+							<divspan class="article-tags_att">
+								{{tags separator=", "}}
+							</span>
+						{{/if}}
 
 					</div>
 

@@ -280,15 +280,6 @@ body.menu-open {
 			font-size: 24px;
 		}
 	}
-	.article-meta_att {
-		border-bottom: 1px solid #E7E7E7;
-		height: 11px;
-	}
-	.bg_att {
-		background: #fff;
-		padding-right: 10px;
-		display: inline-block;
-	}
 }
 
 .article-content_att {
@@ -420,17 +411,25 @@ body.menu-open {
 // footer
 
 .footer_att {
-	margin-top: 100px;
+	margin-top: 50px;
+	padding-bottom: 50px;
+	font-size: 12px;
+	text-align: center;
+	font-weight: 100;
+	font-style: italic;
+	color: #929292;
+	a {
+		color: #929292;
+		text-transform: uppercase;
+		&:hover {
+			color: #333;
+		}
+	}
 }
 
 // mobile
 
-.post-template {
-	.article-meta_att {
-		border-bottom: 0;
-		height: auto;
-	}
-	.bg_att {
-		padding-right: 0;
-	}
+@include breakpoint(980px) {
+
+
 }
