@@ -33,6 +33,10 @@ a {
 	}
 }
 
+* {
+	-webkit-tap-highlight-color: rgba(0,0,0,0); 
+}
+
 img {
 	max-width: 100%;
 }
@@ -442,6 +446,8 @@ body.menu-open {
 
 @include breakpoint(760px) {
 
-
+	.post-template {
+		.blog-description_att { display: none; }
+	}
 
 }
