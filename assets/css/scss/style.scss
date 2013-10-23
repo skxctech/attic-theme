@@ -284,6 +284,7 @@ body.menu-open {
 			font-size: 24px;
 		}
 	}
+	.blog-description_att { display: none; }
 }
 
 .article-content_att {
@@ -447,7 +448,7 @@ body.menu-open {
 @include breakpoint(760px) {
 
 	.post-template {
-		.blog-description_att { display: none; }
+
 	}
 
 }
